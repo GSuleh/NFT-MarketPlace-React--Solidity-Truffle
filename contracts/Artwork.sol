@@ -4,7 +4,16 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 contract Artwork  is ERC721 {
 
-constructor() ERC721("Art","ART"){
+string[] public artworks;
 
+constructor() ERC721("Artwork","ARTWORK"){
+
+}
+
+function mint(string memory _artwork) public{
+    //Require Unique image
+    //Add Artwork
+    //Call mint function
+    //Track Artwork
 }
 }
