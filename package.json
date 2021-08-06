@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/GSuleh/React-Truffle#readme",
   "dependencies": {
-    "@openzeppelin/contracts": "^4.2.0",
+    "@openzeppelin/contracts": "^3.4.0",
     "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
     "mocha": "^9.0.3"

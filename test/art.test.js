@@ -1,3 +1,5 @@
+const { assert } = require('chai')
+
 const Artwork = artifacts.require("./Artwork.sol")
 
 require('chai')
@@ -29,4 +31,13 @@ contract('Artwork', (accounts) => {
             assert.equal(name, 'Artwork')
         })
     })
+
+    describe('mint', async() => {
+        //smoke test for deployment
+        it('Minted successfully', async () => {
+            contract.mint("https://someurl.com/digital_asset.json")
+        })
+
+    })
+
 })

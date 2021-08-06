@@ -1,19 +1,22 @@
 pragma solidity >=0.5.0;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "../node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 
 contract Artwork  is ERC721 {
 
-string[] public artworks;
+using Counters for Counters.Counter;
+Counters.Counter private _tokenIds;
 
-constructor() ERC721("Artwork","ARTWORK"){
+constructor() public ERC721("Artwork","ARTWORK"){
 
 }
 
-function mint(string memory _artwork) public{
-    //Require Unique image
-    //Add Artwork
-    //Call mint function
-    //Track Artwork
+function mint(string memory tokenURI) public returns (uint256){
+    _tokenIds.increment();
+    uint256 newItemId = _tokenIds.current();
+    _safeMint(msg.sender, newItemId);
+    _setTokenURI(newItemId, tokenURI);
+    return newItemId;
 }
 }
